@@ -1,0 +1,24 @@
+.hp{
+    background-color: #fff;
+    margin: 10px auto;
+    border: 1px solid black;
+    width: 400px;
+    height: 20px;
+}
+.hpCount {
+    margin: 0 auto;
+    width: 120px;
+}
+.currentHp {
+    margin: -21px 0 0 0;
+    background-color: #26ff26;
+    height: 100%;
+}
+.objHp{
+    background-color: #fff;
+    margin: 10px auto;
+    border: 1px solid black;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+}

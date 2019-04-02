@@ -1,0 +1,40 @@
+.App{
+  width: 600px;
+  height: 600px;
+  background-color: #92fff7;
+  margin: 15px auto;
+  position: relative;
+}
+
+.start{
+  background-color: #59ff78;
+  position: absolute;
+  width: 200px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid black;
+  left: 35%;
+  top: 50%;
+  cursor: pointer;
+}
+.money{
+  display: inline-block;
+  width: 300px;
+  color: #ecbe2b;
+  padding: 4px;
+  background-color: #424242;
+  border-bottom-right-radius: 15px;
+}
+.gold{
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+}
+.image {
+  cursor: pointer;
+  position: absolute;
+  width: 150px;
+  height: 30px;
+  left: 240px;
+  top: 250px;
+}
