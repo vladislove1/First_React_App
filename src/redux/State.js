@@ -66,7 +66,7 @@ class Store {
             let chance = (Math.random() < this.data.character.criticalChance / 100);
             console.log(chance);
             this.data.character.hp -= this.data.objSpecifications.damage;
-            this.data.character.money += this.data.objSpecifications.moneyPerHit;
+            this.data.character.money += this.data.objSpecifications.moneyPerHit * this.data.character.damage;
             if (chance) {
                 this.data.objSpecifications.hp -= this.data.character.damage * 2;
             } else {
@@ -81,6 +81,7 @@ class Store {
                     this.data.objSpecifications.currentImg = this.data.objSpecifications.img;
                     this.data.objSpecifications.hp = this.data.objSpecifications.maxHp;
                     this.data.objSpecifications.brokeCount++;
+                    this.data.character.money += this.data.objSpecifications.money;
                 }, 2000);
 
             }
@@ -129,28 +130,28 @@ class Store {
                 if (this.data.character.money >= this.data.shop.maxHpPrice) {
                     this.data.character.maxHp += 5;
                     this.data.character.money -= this.data.shop.maxHpPrice;
-                    Math.floor(this.data.shop.maxHpPrice +=  this.data.shop.maxHpPrice / 2);
+                    this.data.shop.maxHpPrice +=  Math.floor(this.data.shop.maxHpPrice / 2);
                     this.reRender();
                 }
             } else if (action.id === '2') {
                 if (this.data.character.money >= this.data.shop.hpRegenPerSecPrice) {
                     this.data.character.hpRegenPerSec += 1;
                     this.data.character.money -= this.data.shop.hpRegenPerSecPrice;
-                    Math.floor(this.data.shop.hpRegenPerSecPrice +=  this.data.shop.hpRegenPerSecPrice / 2);
+                    this.data.shop.hpRegenPerSecPrice +=  Math.floor(this.data.shop.hpRegenPerSecPrice / 2);
                     this.reRender();
                 }
             } else if (action.id === '3') {
                 if (this.data.character.money >= this.data.shop.damagePrice) {
                     this.data.character.damage += 1;
                     this.data.character.money -= this.data.shop.damagePrice;
-                    Math.floor(this.data.shop.amagePrice +=  this.data.shop.amagePrice / 2);
+                    this.data.shop.damagePrice +=  Math.floor(this.data.shop.damagePrice / 2);
                     this.reRender();
                 }
             } else if (action.id === '4') {
                 if (this.data.character.money >= this.data.shop.criticalChancePrice) {
                     this.data.character.criticalChance += 1;
                     this.data.character.money -= this.data.shop.criticalChancePrice;
-                    Math.floor(this.data.shop.criticalChancePrice +=  this.data.shop.criticalChancePrice / 2);
+                    this.data.shop.criticalChancePrice +=  Math.floor(this.data.shop.criticalChancePrice / 2);
                     this.reRender();
                 }
             }
@@ -159,6 +160,3 @@ class Store {
 }
 
 export let store = new Store('Vlad', materials);
-
-
-
